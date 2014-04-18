@@ -2,6 +2,8 @@
 
 ActiveRecord extension to find out near by (proximal) records (previous and next) from the ActiveRelation scopes (using AREL).
 
+The benefit of this gem, it can take any scope, and it does subquery for taking previous and next records.
+
 ### Supported adapters
 
 * mysql2
@@ -35,11 +37,16 @@ Or install it yourself as:
 ```ruby
     scope = Article.title_like('proximal').order('created_at DESC, title ASC')
     current_record = Article.find(20) # it's part of the scope
-    previous, next = current_record.proximal_records(scope)
+    p, n = current_record.proximal_records(scope)
 ```
 
-After that you will get `previous` and `next` records, that are proximal (or near by) records of current_record.
+After that you will get `previous` and `next` records, that are proximal (near by) records of current_record.
 
+
+## Alternatives
+
+- https://github.com/charly/nexter
+- https://github.com/glebm/order_query
 
 ## Contributing
 
