@@ -1,4 +1,4 @@
-# ProximalRecords
+# ProximalRecords 0.0.2
 
 ActiveRecord extension to find out near by (proximal) records (previous and next) from the ActiveRelation scopes (using AREL).
 
