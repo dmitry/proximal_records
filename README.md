@@ -34,10 +34,17 @@ Or install it yourself as:
 
 ## Usage
 
+Include `ProximalRecords` module into your ActiveRecord model and use it with `proximal_records` method, that returns previous and next records in the array. If previous or next records didn't found, then returns nil.
+
 ```ruby
-    scope = Article.title_like('proximal').order('created_at DESC, title ASC')
-    current_record = Article.find(20) # it's part of the scope
-    p, n = current_record.proximal_records(scope)
+class Article < ActiveRecord::Base
+  include ProximalRecords
+end
+
+
+scope = Article.title_like('proximal').order('created_at DESC, title ASC')
+current_record = Article.find(20) # it's part of the scope
+p, n = current_record.proximal_records(scope)
 ```
 
 After that you will get `previous` and `next` records, that are proximal (near by) records of current_record.
@@ -48,9 +55,10 @@ After that you will get `previous` and `next` records, that are proximal (near b
 - https://github.com/charly/nexter
 - https://github.com/glebm/order_query
 
+
 ## Contributing
 
-1. Fork it ( http://github.com/<my-github-username>/proximal_records/fork )
+1. Fork it ( http://github.com/dmitry/proximal_records/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
