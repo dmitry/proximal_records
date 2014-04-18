@@ -1,0 +1,20 @@
+mysql2:
+  adapter: mysql2
+  database: proximal_records
+  username: root
+  encoding: utf8
+
+postgresql:
+  adapter: postgresql
+  database: proximal_records
+  username: postgres
+  password:
+  min_messages: warning
+
+sqlite3:
+  database: fixture_database.sqlite3
+  timeout: 5000
+
+sqlite3_mem:
+  adapter: sqlite3
+  database: ':memory:'
