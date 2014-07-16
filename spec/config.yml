@@ -10,11 +10,3 @@ postgresql:
   username: postgres
   password:
   min_messages: warning
-
-sqlite3:
-  database: fixture_database.sqlite3
-  timeout: 5000
-
-sqlite3_mem:
-  adapter: sqlite3
-  database: ':memory:'
